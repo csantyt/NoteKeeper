@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NoteKeper</string>
+    <string name="app_name">NoteKeeper</string>
     <string name="login">Iniciar sesión</string>
     <string name="username">Usuario</string>
     <string name="password">Contraseña</string>
@@ -33,7 +33,7 @@
     <string name="login_subtitle">Elige una cuenta o entra con tu usuario</string>
     <string name="no_accounts">Cuentas en este dispositivo</string>
     <string name="no_accounts_hint">Todavía no hay cuentas. Crea la primera.</string>
-    <string name="cd_logo">Logo de NoteKeper</string>
+    <string name="cd_logo">Logo de NoteKeeper</string>
     <plurals name="registered_accounts">
         <item quantity="one">%d cuenta registrada</item>
         <item quantity="other">%d cuentas registradas</item>

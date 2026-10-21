@@ -6,11 +6,11 @@ plugins {
 
 android {
 
-    namespace = "com.tuapp.notekeper"
+    namespace = "com.csantyt.notekeeper"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.tuapp.notekeper"
+        applicationId = "com.csantyt.notekeeper"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

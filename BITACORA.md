@@ -1,10 +1,10 @@
-# Bitácora — NoteKeper
+# Bitácora — NoteKeeper
 
 Fecha: 20 de octubre de 2026
 
 ## Qué es el proyecto
 
-NoteKeper es una aplicación de notas para Android, hecha en Kotlin. Guarda los datos en el teléfono con Room, así que no necesita internet. Cada cuenta solo ve sus propias notas.
+NoteKeeper es una aplicación de notas para Android, hecha en Kotlin. Guarda los datos en el teléfono con Room, así que no necesita internet. Cada cuenta solo ve sus propias notas.
 
 ## Qué hace la app
 
@@ -18,12 +18,12 @@ NoteKeper es una aplicación de notas para Android, hecha en Kotlin. Guarda los 
 
 ## Cambios de esta entrega
 
-- Se alineó el paquete del código con `com.tuapp.notekeper`, para que el proyecto compile.
+- Se alineó el paquete del código con `com.csantyt.notekeeper`, para que el proyecto compile.
 - La app corre desde Android 8 (`minSdk` 26) hasta el SDK 35.
 - Se quitó el usuario fijo y la pantalla extra de bienvenida.
 - Las notas se cargan al abrir la lista, no solo después de guardar una nueva.
 - El logo se cambió al perfil dorado, y la pantalla de inicio quedó en negro con el nombre y la frase de la marca.
-- La compilación se escribe fuera de OneDrive, en `AppData\Local\NoteKeper-build`. OneDrive bloqueaba `app\build` y Gradle fallaba con `AccessDeniedException`.
+- La compilación se escribe fuera de OneDrive, en `AppData\Local\NoteKeeper-build`. OneDrive bloqueaba `app\build` y Gradle fallaba con `AccessDeniedException`.
 
 ## Comentarios técnicos
 

@@ -19,13 +19,13 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "NoteKeper"
+rootProject.name = "NoteKeeper"
 include(":app")
 
 // OneDrive bloquea app/build y Gradle falla con AccessDeniedException.
 // La compilación queda en AppData, fuera de la carpeta sincronizada.
 gradle.beforeProject {
     val localAppData = System.getenv("LOCALAPPDATA") ?: System.getProperty("java.io.tmpdir")
-    layout.buildDirectory.set(java.io.File(localAppData, "NoteKeper-build/$name"))
+    layout.buildDirectory.set(java.io.File(localAppData, "NoteKeeper-build/$name"))
 }
  
