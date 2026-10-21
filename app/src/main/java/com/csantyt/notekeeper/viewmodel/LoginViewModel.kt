@@ -6,6 +6,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.csantyt.notekeeper.data.AppDatabase
 import com.csantyt.notekeeper.model.User
+import com.csantyt.notekeeper.util.AuthValidator
 import com.csantyt.notekeeper.util.PasswordHasher
 import kotlinx.coroutines.launch
 
@@ -17,15 +18,16 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     fun login(username: String, password: String, onResult: (AuthResult) -> Unit) {
         viewModelScope.launch {
             val name = username.trim()
-            if (name.isEmpty() || password.isEmpty()) {
-                onResult(AuthResult.Error("Completa usuario y contraseña"))
+            val error = AuthValidator.loginError(username, password)
+            if (error != null) {
+                onResult(AuthResult.Error(error))
                 return@launch
             }
             val user = userDao.getUserByUsername(name)
-            if (user != null && user.password == PasswordHasher.hash(password)) {
+            if (user != null && AuthValidator.passwordMatches(user.password, password)) {
                 onResult(AuthResult.Success(user.id))
             } else {
-                onResult(AuthResult.Error("Usuario o contraseña incorrectos"))
+                onResult(AuthResult.Error(AuthValidator.LOGIN_WRONG))
             }
         }
     }
@@ -38,22 +40,19 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     ) {
         viewModelScope.launch {
             val name = username.trim()
-            when {
-                name.length < 3 ->
-                    onResult(AuthResult.Error("El usuario debe tener al menos 3 caracteres"))
-                password.length < 4 ->
-                    onResult(AuthResult.Error("La contraseña debe tener al menos 4 caracteres"))
-                password != confirm ->
-                    onResult(AuthResult.Error("Las contraseñas no coinciden"))
-                userDao.getUserByUsername(name) != null ->
-                    onResult(AuthResult.Error("Ese usuario ya existe"))
-                else -> {
-                    val id = userDao.insertUser(
-                        User(username = name, password = PasswordHasher.hash(password))
-                    ).toInt()
-                    onResult(AuthResult.Success(id))
-                }
+            val formatError = AuthValidator.registerError(username, password, confirm, usernameTaken = false)
+            if (formatError != null) {
+                onResult(AuthResult.Error(formatError))
+                return@launch
             }
+            if (userDao.getUserByUsername(name) != null) {
+                onResult(AuthResult.Error(AuthValidator.USER_TAKEN))
+                return@launch
+            }
+            val id = userDao.insertUser(
+                User(username = name, password = PasswordHasher.hash(password))
+            ).toInt()
+            onResult(AuthResult.Success(id))
         }
     }
 }

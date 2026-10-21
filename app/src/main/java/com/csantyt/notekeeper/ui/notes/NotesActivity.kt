@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.csantyt.notekeeper.R
 import com.csantyt.notekeeper.data.Session
+import com.csantyt.notekeeper.util.NoteSearch
 import com.csantyt.notekeeper.databinding.ActivityNotesBinding
 import com.csantyt.notekeeper.model.Note
 import com.csantyt.notekeeper.ui.login.LoginActivity
@@ -69,14 +70,7 @@ class NotesActivity : AppCompatActivity() {
 
     private fun showNotes() {
         val query = binding.etSearch.text?.toString().orEmpty().trim()
-        val shown = if (query.isEmpty()) {
-            allNotes
-        } else {
-            allNotes.filter { note ->
-                note.title.contains(query, ignoreCase = true) ||
-                    note.content.contains(query, ignoreCase = true)
-            }
-        }
+        val shown = NoteSearch.filter(allNotes, query)
         noteAdapter.submitList(shown)
         binding.tvEmpty.isVisible = shown.isEmpty()
         binding.tvEmpty.setText(if (query.isEmpty()) R.string.empty_notes else R.string.empty_search)

@@ -58,6 +58,8 @@ app/src/main/java/com/csantyt/notekeeper/
 │   └── splash/
 │       └── SplashActivity.kt
 ├── util/
+│   ├── AuthValidator.kt
+│   ├── NoteSearch.kt
 │   ├── PasswordHasher.kt
 │   └── UserAvatars.kt
 └── viewmodel/
@@ -86,7 +88,7 @@ Con esa propiedad, la compilación se escribe en `%LOCALAPPDATA%\NoteKeeper-buil
 - [ ] Contraseñas con sal (PBKDF2)
 - [ ] Migraciones de Room
 - [ ] Conservar el texto del editor al girar la pantalla
-- [ ] Pruebas unitarias
+- [x] Pruebas unitarias
 - [ ] Agregar capturas
 
 ## Bitácora y autor
