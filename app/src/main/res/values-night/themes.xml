@@ -3,8 +3,7 @@
     <style name="Theme.NoteKeper" parent="Base.Theme.NoteKeper" />
 
     <style name="Base.Theme.NoteKeper" parent="Theme.Material3.DayNight.NoActionBar">
-
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorOnPrimary">@color/black</item>
     </style>
 </resources>

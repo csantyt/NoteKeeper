@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFE14A</color>
+    <color name="gold">#E6B325</color>
+    <color name="dark">#121214</color>
+    <color name="surface">#1C1E24</color>
+    <color name="line">#343844</color>
+    <color name="background">#F6F6F6</color>
+    <color name="muted">#A0A4B0</color>
+    <color name="ink">#1C1C1C</color>
 </resources>

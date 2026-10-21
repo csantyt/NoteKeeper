@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">NoteKeper</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="have_account">Ya tengo cuenta</string>
+    <string name="my_notes">Mis notas</string>
+    <string name="search_hint">Buscar notas</string>
+    <string name="empty_notes">Todavía no tienes notas</string>
+    <string name="empty_search">No hay notas con ese texto</string>
+    <string name="new_note">Nueva nota</string>
+    <string name="edit_note">Editar nota</string>
+    <string name="title_hint">Título</string>
+    <string name="content_hint">Escribe tu nota</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Eliminar</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="note_saved">Nota guardada</string>
+    <string name="note_deleted">Nota eliminada</string>
+    <string name="note_missing">No se encontró la nota</string>
+    <string name="title_required">Escribe un título</string>
+    <string name="delete_title">Eliminar nota</string>
+    <string name="delete_message">¿Seguro que quieres eliminar esta nota?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="cd_add">Agregar nota</string>
+    <string name="cd_avatar">Avatar</string>
+    <string name="register_title">Crea tu cuenta</string>
+    <string name="splash_title">NoteKeeper</string>
+    <string name="splash_tagline">Tus ideas, siempre a mano</string>
+    <string name="login_subtitle">Elige una cuenta o entra con tu usuario</string>
+    <string name="no_accounts">Cuentas en este dispositivo</string>
+    <string name="no_accounts_hint">Todavía no hay cuentas. Crea la primera.</string>
+    <string name="cd_logo">Logo de NoteKeper</string>
+    <plurals name="registered_accounts">
+        <item quantity="one">%d cuenta registrada</item>
+        <item quantity="other">%d cuentas registradas</item>
+    </plurals>
 </resources>
