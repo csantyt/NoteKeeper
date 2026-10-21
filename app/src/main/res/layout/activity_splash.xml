@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/splash_tagline"
-        android:textColor="#F2F2F2"
+        android:textColor="#C9C4B6"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,9 +50,9 @@
 
     <FrameLayout
         android:id="@+id/progressTrack"
-        android:layout_width="132dp"
+        android:layout_width="120dp"
         android:layout_height="4dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="96dp"
         android:background="@drawable/bg_progress_track"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
